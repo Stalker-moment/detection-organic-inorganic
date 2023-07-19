@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trash Detection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Trash Detection</h1>
+    <button id="reset-button">Reset Statistics</button>
+    <br><br>
+    <h2>Statistics</h2>
+    <p id="stats"></p>
+    <br>
+    <button id="qrcode-button">Generate QR Code</button>
+    <br><br>
+    <img id="qrcode" src="" alt="QR Code">
+    <br><br>
+    <script>
+        $(document).ready(function() {
+            // Reset statistics
+            $('#reset-button').click(function() {
+                $.get('/reset', function(data) {
+                    if (data.success) {
+                        alert('Statistics reset successfully.');
+                    }
+                });
+            });
+
+            // Display statistics
+            setInterval(function() {
+                $.get('/stats', function(data) {
+                    $('#stats').text(`Organik: ${data.organik} | Non-organik: ${data.nonorganik}`);
+                });
+            }, 1000);
+
+            // Generate QR code
+            $('#qrcode-button').click(function() {
+                $.get('/qrcode', function(data) {
+                    if (data.success) {
+                        $('#qrcode').attr('src', '/qrcode.png');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
