@@ -8,7 +8,7 @@
   <summary><b>Team Project</summary>
     <ul>
       <li>
-        <a href="https://github.com/Stalker-momoent">
+        <a href="https://github.com/Stalker-moment">
           Muh. Tier Sinyo C. U. S.
         </a>
       </li>
