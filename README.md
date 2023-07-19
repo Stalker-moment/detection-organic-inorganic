@@ -9,7 +9,7 @@
     <ul>
       <li>
         <a href="https://github.com/Stalker-momoent">
-          Tier Sinyo
+          Muh. Tier Sinyo C. U. S.
         </a>
       </li>
       <li>
